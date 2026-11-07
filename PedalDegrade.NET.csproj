@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <AssemblyName>Pedal Degrade.NET</AssemblyName>
+    <RootNamespace>Pedal.Degrade</RootNamespace>
+    <Version>1.0.0</Version>
+    <Authors>thepedal</Authors>
+    <Description>Pedal Degrade: sample-rate and bit-depth reducer for ReBuzz</Description>
+
+    <!-- Mandatory for every machine (Build §1.2): ReBuzz only loads the .dll -->
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <NoWarn>MSB3277</NoWarn>
+
+    <ReBuzzPath Condition="'$(ReBuzzPath)' == ''">C:\Program Files\ReBuzz</ReBuzzPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="BuzzGUI.Interfaces">
+      <HintPath>$(ReBuzzPath)\BuzzGUI.Interfaces.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <!-- MenuItemVM / SimpleCommand for the About entry -->
+    <Reference Include="BuzzGUI.Common">
+      <HintPath>$(ReBuzzPath)\BuzzGUI.Common.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="gen_presets.py" />
+  </ItemGroup>
+
+  <!-- Deploy the dll and the auto-load preset bundle to Gear\Effects (Build §1.3, §3.5.1) -->
+  <Target Name="DeployToReBuzz" AfterTargets="Build">
+    <PropertyGroup>
+      <_PresetPath>$(MSBuildProjectDirectory)\Pedal Degrade.prs.xml</_PresetPath>
+      <_GearDir>$(ReBuzzPath)\Gear\Effects\</_GearDir>
+    </PropertyGroup>
+    <ItemGroup>
+      <_AnyPreset Include="$(MSBuildProjectDirectory)\*.prs.xml" />
+    </ItemGroup>
+
+    <Message Text="Deploying $(TargetFileName) -> $(_GearDir)" Importance="high" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(_GearDir)" ContinueOnError="true" />
+
+    <Message Condition="Exists('$(_PresetPath)')"
+             Text="Deploying preset bundle -> $(_GearDir)" Importance="high" />
+    <Copy Condition="Exists('$(_PresetPath)')"
+          SourceFiles="$(_PresetPath)" DestinationFolder="$(_GearDir)" ContinueOnError="true" />
+    <Warning Condition="!Exists('$(_PresetPath)')"
+             Text="Preset bundle NOT deployed: '$(_PresetPath)' not found. Found instead: @(_AnyPreset). It must be named 'Pedal Degrade.prs.xml'." />
+  </Target>
+
+</Project>

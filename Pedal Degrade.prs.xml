@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PresetDictionary>
+  <Item Key="Clean">
+    <Preset Machine="Pedal Degrade">
+      <Parameters>
+        <Parameter Name="Smp. Rate" Group="1" Index="0" Track="0" Value="1" />
+        <Parameter Name="Bit Depth" Group="1" Index="1" Track="0" Value="16" />
+      </Parameters>
+      <Attributes />
+      <Comment></Comment>
+    </Preset>
+  </Item>
+  <Item Key="Classic Degrade">
+    <Preset Machine="Pedal Degrade">
+      <Parameters>
+        <Parameter Name="Smp. Rate" Group="1" Index="0" Track="0" Value="16" />
+        <Parameter Name="Bit Depth" Group="1" Index="1" Track="0" Value="6" />
+      </Parameters>
+      <Attributes />
+      <Comment></Comment>
+    </Preset>
+  </Item>
+  <Item Key="12-bit Sampler">
+    <Preset Machine="Pedal Degrade">
+      <Parameters>
+        <Parameter Name="Smp. Rate" Group="1" Index="0" Track="0" Value="2" />
+        <Parameter Name="Bit Depth" Group="1" Index="1" Track="0" Value="12" />
+      </Parameters>
+      <Attributes />
+      <Comment></Comment>
+    </Preset>
+  </Item>
+  <Item Key="8-bit Console">
+    <Preset Machine="Pedal Degrade">
+      <Parameters>
+        <Parameter Name="Smp. Rate" Group="1" Index="0" Track="0" Value="4" />
+        <Parameter Name="Bit Depth" Group="1" Index="1" Track="0" Value="8" />
+      </Parameters>
+      <Attributes />
+      <Comment></Comment>
+    </Preset>
+  </Item>
+  <Item Key="Walkie Crunch">
+    <Preset Machine="Pedal Degrade">
+      <Parameters>
+        <Parameter Name="Smp. Rate" Group="1" Index="0" Track="0" Value="8" />
+        <Parameter Name="Bit Depth" Group="1" Index="1" Track="0" Value="5" />
+      </Parameters>
+      <Attributes />
+      <Comment></Comment>
+    </Preset>
+  </Item>
+  <Item Key="4-bit Grit">
+    <Preset Machine="Pedal Degrade">
+      <Parameters>
+        <Parameter Name="Smp. Rate" Group="1" Index="0" Track="0" Value="3" />
+        <Parameter Name="Bit Depth" Group="1" Index="1" Track="0" Value="4" />
+      </Parameters>
+      <Attributes />
+      <Comment></Comment>
+    </Preset>
+  </Item>
+  <Item Key="1-bit Fuzz">
+    <Preset Machine="Pedal Degrade">
+      <Parameters>
+        <Parameter Name="Smp. Rate" Group="1" Index="0" Track="0" Value="1" />
+        <Parameter Name="Bit Depth" Group="1" Index="1" Track="0" Value="1" />
+      </Parameters>
+      <Attributes />
+      <Comment></Comment>
+    </Preset>
+  </Item>
+  <Item Key="Aliased Shimmer">
+    <Preset Machine="Pedal Degrade">
+      <Parameters>
+        <Parameter Name="Smp. Rate" Group="1" Index="0" Track="0" Value="6" />
+        <Parameter Name="Bit Depth" Group="1" Index="1" Track="0" Value="16" />
+      </Parameters>
+      <Attributes />
+      <Comment></Comment>
+    </Preset>
+  </Item>
+  <Item Key="Subterranean">
+    <Preset Machine="Pedal Degrade">
+      <Parameters>
+        <Parameter Name="Smp. Rate" Group="1" Index="0" Track="0" Value="64" />
+        <Parameter Name="Bit Depth" Group="1" Index="1" Track="0" Value="3" />
+      </Parameters>
+      <Attributes />
+      <Comment></Comment>
+    </Preset>
+  </Item>
+</PresetDictionary>
